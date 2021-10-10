@@ -1,0 +1,141 @@
+{
+	"info": {
+		"_postman_id": "150d2fdc-5cca-492a-8f90-206f50bd499b",
+		"name": "SpringBoot-Company",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get All companies",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/companies/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"companies",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find company by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/companies/findbyid/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"companies",
+						"findbyid",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find company by name",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/companies/findbyname/test",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"companies",
+						"findbyname",
+						"test"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add new company",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"companyname\": \"TestAutomationCompany\",\n    \"street\": \"Street\",\n    \"phonenumber\": \"3105436789\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/companies/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"companies",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Remove company by id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/companies/removebyid/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"companies",
+						"removebyid",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Remove all companies",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/companies/removeall",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"companies",
+						"removeall"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
