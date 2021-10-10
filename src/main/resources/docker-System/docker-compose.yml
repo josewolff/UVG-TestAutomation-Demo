@@ -1,0 +1,8 @@
+version: '3'
+
+services:
+  webapp:
+    image: wolffjose/sample-web-app:latest
+    restart: always
+    ports:
+      - 8081:80
