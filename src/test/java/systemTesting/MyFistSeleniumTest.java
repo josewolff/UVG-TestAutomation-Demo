@@ -12,7 +12,8 @@ public class MyFistSeleniumTest extends InitDriver {
     }
 
     @Test(groups = {"myfirstTest"})
-    public void myfirstTest() {
+    public void myfirstTest() throws InterruptedException {
         System.out.println("hello");
+        Thread.sleep(10000);
     }
 }
