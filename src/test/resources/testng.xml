@@ -1,11 +1,22 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="UVG - Test Automation Demo TestSuite" allow-return-values="true" verbose="1">
-
-
-    <test name="Test Cases">
-
+<suite name="UVG">
+    <parameter name="includeGroup" value="seleniumPomSolid"/>
+    <parameter name="apiHost" value="http://localhost:5001"/>
+    <parameter name="seleniumHost" value="http://localhost:8081"/>
+    <parameter name="browser" value="chrome"/>
+    <test name="TestCases UVG">
+        <groups>
+            <run>
+                <include name="seleniumPomSolid"/>
+                </run>
+        </groups>
         <classes>
-            <class name="systemTesting.MyFistSeleniumTest"/>
+            <class name="apiTesting.APITest"/>
+            <class name="systemTesting.uvg.pomSolid.CreateUserPomSolidTests"/>
         </classes>
     </test>
+
+    <listeners>
+        <listener class-name="listeners.UVGListener"/>
+    </listeners>
 </suite>

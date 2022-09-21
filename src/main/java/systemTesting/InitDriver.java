@@ -15,6 +15,7 @@ import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 
 import java.io.IOException;
+import java.time.Duration;
 
 public class InitDriver {
 
@@ -50,18 +51,15 @@ public class InitDriver {
             } else {
                 if (browser.equals("chrome")) {
                     System.setProperty("webdriver.chrome.driver", chromeDriver);
-                    DesiredCapabilities caps = DesiredCapabilities.chrome();
-                    ChromeOptions options = new ChromeOptions();
-                    options.addArguments(new String[]{"--start-maximized"});
-                    options.merge(caps);
-                    driver = new ChromeDriver(options);
+                    driver = new ChromeDriver();
+                    System.out.println("init chrome");
                 } else if (browser.equals("safari")) {
                     driver = new SafariDriver();
                     driver.manage().window().maximize();
                 }
             }
 
-            wait = new WebDriverWait(driver, 15,100);
+            wait = new WebDriverWait(driver, Duration.ofSeconds(15));
             return driver;
         } catch (Exception var5) {
             var5.printStackTrace();

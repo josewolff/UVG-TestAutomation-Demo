@@ -4,17 +4,17 @@ import org.openqa.selenium.By;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import systemTesting.InitDriver;
+import utils.GlobalVariables;
 
 public class MyFirstStepsWithSelenium extends InitDriver {
 
-    private String url = "http://localhost:8081/register.html";
-
     @BeforeMethod
     public void init(){
+        final String url = GlobalVariables.seleniumHost + "/register.html";
         driver.get(url);
     }
 
-    @Test
+    @Test(groups = {"all","myFirstTest"})
     public void f() throws InterruptedException {
         Thread.sleep(5000);
         driver.findElement(By.id("exampleFirstName")).sendKeys("Jose Andres");

@@ -4,18 +4,17 @@ import apiTestingAuxClasses.RequestMaker;
 import io.restassured.response.Response;
 import org.json.JSONArray;
 import org.json.JSONObject;
-import org.junit.Assert;
+import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+import utils.GlobalVariables;
 
 public class APITest {
 
-    private String domain = "http://localhost:5000/";
-
-    @Test
+    @Test(groups = {"all","get"})
     public void getTest(){
-        String getAllUsers = domain + "users/all";
+        String getAllUsers = GlobalVariables.apiHost  + "/users/all";
         Response response = RequestMaker.makeGetRequest(getAllUsers);
         String responseString = response.asString();
         JSONArray jsonArray =  new JSONArray(responseString);
@@ -25,9 +24,9 @@ public class APITest {
         }
     }
 
-    @Test
+    @Test(groups = {"all","post"})
     public void postMethod(){
-        String getAllUsers = domain + "users/add";
+        String getAllUsers = GlobalVariables.apiHost  + "/users/add";
         JSONObject jsonObject = new JSONObject();
         jsonObject.put("firstname", "Wolff")
                 .put("lastname", "Jose")

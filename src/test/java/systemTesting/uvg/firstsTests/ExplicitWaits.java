@@ -5,17 +5,18 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import systemTesting.InitDriver;
+import utils.GlobalVariables;
 
 public class ExplicitWaits extends InitDriver {
 
-    private String url = "http://localhost:8081/register.html";
 
     @BeforeMethod
     public void init(){
+        final String url = GlobalVariables.seleniumHost + "/register.html";
         driver.get(url);
     }
 
-    @Test
+    @Test(groups = {"all","explicitWaits"})
     public void f() throws InterruptedException {
         Thread.sleep(5000);
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("exampleFirstName"))).sendKeys("Testing");
