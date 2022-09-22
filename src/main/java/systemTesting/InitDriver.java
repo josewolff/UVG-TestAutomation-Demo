@@ -52,7 +52,6 @@ public class InitDriver {
                 if (browser.equals("chrome")) {
                     System.setProperty("webdriver.chrome.driver", chromeDriver);
                     driver = new ChromeDriver();
-                    System.out.println("init chrome");
                 } else if (browser.equals("safari")) {
                     driver = new SafariDriver();
                     driver.manage().window().maximize();

@@ -8,15 +8,15 @@ import utils.GlobalVariables;
 
 public class MyFirstStepsWithSelenium extends InitDriver {
 
-    @BeforeMethod
+    @BeforeMethod(alwaysRun = true)
     public void init(){
         final String url = GlobalVariables.seleniumHost + "/register.html";
         driver.get(url);
     }
 
-    @Test(groups = {"all","myFirstTest"})
+    @Test(groups = {"all","myFirstTest2"})
     public void f() throws InterruptedException {
-        Thread.sleep(5000);
+        Thread.sleep(10000);
         driver.findElement(By.id("exampleFirstName")).sendKeys("Jose Andres");
         Thread.sleep(2000);
         driver.findElement(By.id("exampleLastName")).sendKeys("Wolff");

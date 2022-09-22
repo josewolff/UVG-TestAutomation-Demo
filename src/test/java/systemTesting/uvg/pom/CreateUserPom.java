@@ -8,7 +8,7 @@ import utils.GlobalVariables;
 public class CreateUserPom extends InitDriver {
     private CreateUser createUser;
 
-    @BeforeMethod
+    @BeforeMethod(alwaysRun = true)
     public void init(){
         final String url = GlobalVariables.seleniumHost + "/register.html";
         driver.get(url);

@@ -10,7 +10,7 @@ import utils.GlobalVariables;
 public class ExplicitWaits extends InitDriver {
 
 
-    @BeforeMethod
+    @BeforeMethod(alwaysRun = true)
     public void init(){
         final String url = GlobalVariables.seleniumHost + "/register.html";
         driver.get(url);

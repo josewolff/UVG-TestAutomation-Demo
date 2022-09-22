@@ -19,6 +19,7 @@ public class CreateUserPomSolidTests extends InitDriver {
     @Test(groups = {"all","seleniumPomSolid"})
     public void f() throws InterruptedException {
         Thread.sleep(5000);
+        System.out.println("hello UVG");
         createUser.createUserMethod();
     }
 }

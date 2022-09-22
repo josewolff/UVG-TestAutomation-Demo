@@ -1,18 +1,21 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="UVG">
-    <parameter name="includeGroup" value="seleniumPomSolid"/>
+    <parameter name="includeGroup" value="all"/>
     <parameter name="apiHost" value="http://localhost:5001"/>
     <parameter name="seleniumHost" value="http://localhost:8081"/>
     <parameter name="browser" value="chrome"/>
     <test name="TestCases UVG">
         <groups>
             <run>
-                <include name="seleniumPomSolid"/>
+                <include name="all"/>
                 </run>
         </groups>
         <classes>
             <class name="apiTesting.APITest"/>
             <class name="systemTesting.uvg.pomSolid.CreateUserPomSolidTests"/>
+            <class name="systemTesting.MyFistSeleniumTest"/>
+/            <class name="systemTesting.uvg.firstsTests.MyFirstStepsWithSelenium"/>
+            <class name="systemTesting.uvg.firstsTests.ExplicitWaits"/>
         </classes>
     </test>
 

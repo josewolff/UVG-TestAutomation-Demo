@@ -19,21 +19,24 @@ public class APITest {
         String responseString = response.asString();
         JSONArray jsonArray =  new JSONArray(responseString);
         System.out.println(jsonArray.toString(10));
-        if(jsonArray.length() > 0){
-            Assert.fail("Fail test");
+        if(jsonArray.length() == 0){
+            Assert.fail("Fail test - Get Users is empty.");
         }
     }
 
     @Test(groups = {"all","post"})
     public void postMethod(){
         String getAllUsers = GlobalVariables.apiHost  + "/users/add";
-        JSONObject jsonObject = new JSONObject();
-        jsonObject.put("firstname", "Wolff")
-                .put("lastname", "Jose")
-                .put("username","josewolff")
-                .put("email","wolff@laserants.com");
-        Response response = RequestMaker.makePostRequest(getAllUsers, jsonObject.toString());
-        System.out.println(response.asString());
+        for (int i = 0; i < 300; i++){
+            JSONObject jsonObject = new JSONObject();
+            jsonObject.put("firstname", "Wolff" + i)
+                    .put("lastname", "Jose" + i)
+                    .put("username","josewolff"+ i)
+                    .put("email","wolff@laserants.com"+ i);
+            Response response = RequestMaker.makePostRequest(getAllUsers, jsonObject.toString());
+            System.out.println(response.asString());
+        }
+
     }
 
     @AfterClass

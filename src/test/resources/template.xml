@@ -15,6 +15,9 @@
         <classes>
             <class name="apiTesting.APITest"/>
             <class name="systemTesting.uvg.pomSolid.CreateUserPomSolidTests"/>
+            <class name="systemTesting.MyFistSeleniumTest"/>
+/            <class name="systemTesting.uvg.firstsTests.MyFirstStepsWithSelenium"/>
+            <class name="systemTesting.uvg.firstsTests.ExplicitWaits"/>
         </classes>
     </test>
 
